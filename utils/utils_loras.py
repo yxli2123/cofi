@@ -316,7 +316,7 @@ class Pruner(object):
         final_threshold = self.config['final_threshold']
         initial_warmup = self.config['initial_warmup']
         final_warmup = self.config['final_warmup']
-        warmup_steps = self.config['warmup_steps']
+        warmup_steps = self.config['warmup_steps_loras']
         mask_ind = False
         if step <= initial_warmup * warmup_steps:
             threshold = initial_threshold
