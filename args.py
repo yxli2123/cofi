@@ -47,6 +47,23 @@ class AdditionalArguments():
     distill_ce_loss_alpha: float = field(default=0.1, metadata={"help": "Distillation cross entrypy loss weight"})
     distill_temp: float = field(default=2./3., metadata={"help": "Distillation temperature"})
 
+    # pruner setup
+    initial_threshold: float = field(default=1.0)
+    final_threshold: float = field(default=0.2)
+    initial_warmup: int = field(default=3)
+    final_warmup: int = field(default=8)
+    warmup_steps_loras: int = field(default=5400)
+    beta1: float = field(default=0.85)
+    beta2: float = field(default=1.)
+    deltaT: float = field(default=50)
+    structured_method: str = field(default='mean')
+    structured_direction: str = field(default='row')
+    record_steps: int = field(default=1000)
+
+    # low-rank decomposition
+    low_rank_parameter_ratio: float = field(default=0.05)
+
+
     def __post_init__(self):
         if self.pretrained_pruned_model == "None":
             self.pretrained_pruned_model = None

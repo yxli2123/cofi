@@ -95,7 +95,7 @@ fi
 
 mkdir -p $output_dir
 
-python3 $code_dir/run_glue_prune.py \
+python3 $code_dir/run_glue_loras.py \
 	   --output_dir ${output_dir} \
 	   --logging_steps ${logging_steps} \
 	   --task_name ${task_name} \
