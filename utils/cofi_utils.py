@@ -2,7 +2,6 @@ import torch
 import os
 from transformers.modeling_utils import prune_linear_layer
 from transformers import AutoConfig, BertForSequenceClassification
-from transformers.file_utils import hf_bucket_url, cached_path
 
 from utils.utils import calculate_parameters
 
